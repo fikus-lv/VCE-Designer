@@ -1,0 +1,34 @@
+﻿<xml>
+  <Test>
+    <body>
+      <ask>2+3</ask>
+      <answer>5</answer>
+      <bals>2</bals>
+    </body>
+    <body>
+      <ask>2+4</ask>
+      <answer>6</answer>
+      <bals>2</bals>
+    </body>
+    <body>
+      <ask>5-1</ask>
+      <answer>4</answer>
+      <bals>2</bals>
+    </body>
+    <body>
+      <ask>10*2</ask>
+      <answer>20</answer>
+      <bals>2</bals>
+    </body>
+    <body>
+      <ask>9:3</ask>
+      <answer>3</answer>
+      <bals>2</bals>
+    </body>
+    <body>
+      <ask>70-70</ask>
+      <answer>0</answer>
+      <bals>2</bals>
+    </body>
+  </Test>
+</xml>
