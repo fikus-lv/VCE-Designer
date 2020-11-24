@@ -115,9 +115,39 @@ namespace Fikus_Server.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap colorful_modern_trendy_background_for_applications_or_presentations_95169_962 {
+            get {
+                object obj = ResourceManager.GetObject("colorful-modern-trendy-background-for-applications-or-presentations_95169-962", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap earlybird_17_9941_oboi_temnyj_fon_1920x1080 {
+            get {
+                object obj = ResourceManager.GetObject("earlybird_17_9941_oboi_temnyj_fon_1920x1080", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap group_class_512 {
             get {
                 object obj = ResourceManager.GetObject("group_class-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unnamed__1_ {
+            get {
+                object obj = ResourceManager.GetObject("unnamed (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
