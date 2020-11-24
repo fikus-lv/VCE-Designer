@@ -105,7 +105,7 @@ namespace VCE_Designer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (textBox1.Text == ""|| textBox2.Text == ""|| textBox3.Text == "")
             {
                 MessageBox.Show("Заполните все поля.", "Ошибка.");
             }
