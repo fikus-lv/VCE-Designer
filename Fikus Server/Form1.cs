@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Fikus_Server.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,8 @@ namespace Fikus_Server
         public Form1()
         {
             InitializeComponent();
+        
+            
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -29,8 +33,19 @@ namespace Fikus_Server
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            
+            SqlConnection con = new SqlConnection("conStr");
+            string sql = "Select * From Test";
 
+            SqlCommand com = new SqlCommand(sql, con);
+            con.Open();
+            SqlDataReader dr = com.ExecuteReader();
+            dataGridView1.DataSource = dr;
+            dr.Close();
+            con.Close();
         }
+        
+    
 
         private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -46,5 +61,7 @@ namespace Fikus_Server
         {
 
         }
+
+        
     }
 }
