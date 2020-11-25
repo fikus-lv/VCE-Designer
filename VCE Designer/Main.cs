@@ -15,9 +15,9 @@ namespace VCE_Designer
         public Main()
         {
             InitializeComponent();
-
             saveFileDialog1.Filter = "XML files(*.xml)|*.xml|All files(*.*)|*.*";
-            openFileDialog1.Filter = "XML files(*.xml)|*.xml|All files(*.*)|*.*";
+
+
         }
 
         private void оНасToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace VCE_Designer
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-
+           
             SaveFileDialog dialog = new SaveFileDialog();
             try
             {
@@ -44,7 +44,9 @@ namespace VCE_Designer
                     DataTable dt = new DataTable(); // создаем пока что пустую таблицу данных
                     dt.TableName = "Test"; // название таблицы
                     dt.Columns.Add("ask"); // название колонок
-                    dt.Columns.Add("answer");
+                    dt.Columns.Add("answer1");
+                    dt.Columns.Add("answer2");
+                    dt.Columns.Add("answer3");
                     dt.Columns.Add("bals");
                     ds.Tables.Add(dt); //в ds создается таблица, с названием и колонками, созданными выше
 
@@ -52,8 +54,10 @@ namespace VCE_Designer
                     {
                         DataRow row = ds.Tables["Test"].NewRow(); // создаем новую строку в таблице, занесенной в ds
                         row["ask"] = r.Cells[0].Value;  //в столбец этой строки заносим данные из первого столбца dataGridView1
-                        row["answer"] = r.Cells[1].Value; // то же самое со вторыми столбцами
-                        row["bals"] = r.Cells[2].Value; //то же самое с третьими столбцами
+                        row["answer1"] = r.Cells[1].Value; // то же самое со вторыми столбцами
+                        row["answer2"] = r.Cells[2].Value; // то же самое со вторыми столбцами
+                        row["answer3"] = r.Cells[3].Value; // то же самое со вторыми столбцами
+                        row["bals"] = r.Cells[4].Value; //то же самое с третьими столбцами
                         ds.Tables["Test"].Rows.Add(row); //добавление всей этой строки в таблицу ds.
                     }
                 if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
@@ -76,6 +80,7 @@ namespace VCE_Designer
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            openFileDialog1.Filter = "XML files(*.xml)|*.xml|All files(*.*)|*.*";
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             string filename = openFileDialog1.FileName;
@@ -92,8 +97,10 @@ namespace VCE_Designer
                 {
                     int n = dataGridView1.Rows.Add();
                     dataGridView1.Rows[n].Cells[0].Value = item["ask"];
-                    dataGridView1.Rows[n].Cells[1].Value = item["answer"];
-                    dataGridView1.Rows[n].Cells[2].Value = item["bals"];
+                    dataGridView1.Rows[n].Cells[1].Value = item["answer1"];   
+                    dataGridView1.Rows[n].Cells[2].Value = item["answer2"];
+                    dataGridView1.Rows[n].Cells[3].Value = item["answer3"];
+                    dataGridView1.Rows[n].Cells[4].Value = item["bals"];
                 }
             }
             catch
@@ -105,7 +112,7 @@ namespace VCE_Designer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (textBox3.Text == "")
             {
                 MessageBox.Show("Заполните все поля.", "Ошибка.");
             }
@@ -114,7 +121,9 @@ namespace VCE_Designer
                 int n = dataGridView1.Rows.Add();
                 dataGridView1.Rows[n].Cells[0].Value = textBox1.Text;
                 dataGridView1.Rows[n].Cells[1].Value = textBox2.Text;
-                dataGridView1.Rows[n].Cells[2].Value = textBox3.Text;
+                dataGridView1.Rows[n].Cells[2].Value = textBox4.Text;
+                dataGridView1.Rows[n].Cells[3].Value = textBox5.Text;
+                dataGridView1.Rows[n].Cells[4].Value = textBox3.Text;
             }
         }
 
@@ -125,7 +134,9 @@ namespace VCE_Designer
                 int n = dataGridView1.SelectedRows[0].Index;
                 dataGridView1.Rows[n].Cells[0].Value = textBox1.Text;
                 dataGridView1.Rows[n].Cells[1].Value = textBox2.Text;
-                dataGridView1.Rows[n].Cells[2].Value = textBox3.Text;
+                dataGridView1.Rows[n].Cells[2].Value = textBox4.Text;
+                dataGridView1.Rows[n].Cells[3].Value = textBox5.Text;
+                dataGridView1.Rows[n].Cells[4].Value = textBox3.Text;
             }
             else
             {
